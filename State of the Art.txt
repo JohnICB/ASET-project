@@ -1,0 +1,25 @@
+State of the art document for crack detection:
+
+Who:
+Young-Jin Cha & Wooram Choi Department of Civil Engineering, University of Manitoba, Winnipeg, MB, Canada
+Oral Buyukozturk: Department of Civil and Environmental Engineering, Massachusetts Institute of Technology, Cambridge, MA, USA
+
+What they used:
+    They proposed a vision-based method using a deep architecture of convolutional neural networks (CNNs) 
+for detecting concrete cracks without calculating the defect features. As CNNs are capable of learning 
+image features automatically, they proposed a method which works without the conjugation of image processing
+techniques (IPT) for extracting features, which was a method used in the passed, but very inefficient.
+How they did it:
+    To train a CNN classiﬁer they used raw images of concrete surfaces with a broad range of image variations, including 
+lighting, shadow, etc., capable of potentially triggering false alarms, are taken from a complex Engineering 
+building using a DSLR camera. All the pictures were stored in a database at a high resolution. When training the
+CNNs the pictures were downscaled to a resolution of 256 x 256 pixels to improve the training times. Another 
+technique they used is to randomly crop areas from the picture and used them in the training aswell.
+
+Tools used:
+DSLR Camera, database
+
+links:
+https://www.researchgate.net/publication/315613676_Deep_Learning-Based_Crack_Damage_Detection_Using_Convolutional_Neural_Networks
+
+- Ionut Ciobanu
