@@ -1,0 +1,30 @@
+Other techiques, names:
+- M. Rodríguez-Martína, S. Lagüelaa, D. González-Aguileraa, J. Martínezb, infrared thermography: method based on IR image rectification with the extraction of Isotherms which allows the detection of cracks as well as the geometric characterization and orientation of the crack to assist the prediction of the direction of propagation of the crack through the material
+
+- D. Dhital, J.R. Lee, Ultrasonic image based processing techniques: ultrasonic images were used to extract damage features based upon which the through diagnosis of the damage was performed. In addition to the ultrasonic imaging system, ultrasonic sound can also be used to detect the surface crack with conceptual crack feature extraction.
+
+- Mostafa Rabaha, Ahmed Elhattab, Atef Fayad, Laser image based processing: proposed a crack detection system with a high spatial resolution of imaging and the excellent capability of measuring the 3D space by laser scanning. The proposed design is of higher potential because of the combined action of the data acquisition and data compilation. The cracks detection and mapping was achieved by three steps, shading correction, crack detection and crack mapping.
+
+- Said Amirul Anwar, MohdZaid Abdullah,  Electroluminescence image: When electrocuted, the specimen emits light in response to the passage of an electric current and is imaged using EL camera. EL technique is used for the visualization like the high-resolution cameras. The authors have presented a system for micro crack detection in the crystalline structure. The presence of the various types of the image anomalies like dislocation clusters, grain boundaries and discontinuities in the gray levels makes the micro crack detection very challenging. In their work, an anisotropic diffusion filtering algorithm was used. The filtering technique was able to enhance the pixel levels. Their results show an accuracy averaging from 90%.
+
+Relevant Links:
+https://www.researchgate.net/publication/283685105_Thermographic_test_for_the_geometric_characterization_of_cracks_in_welding_using_IR_image_rectification
+
+https://www.researchgate.net/publication/257679056_A_Fully_Non-Contact_Ultrasonic_Propagation_Imaging_System_for_Closed_Surface_Crack_Evaluation
+
+https://www.researchgate.net/publication/259525373_Automatic_concrete_cracks_detection_and_mapping_of_terrestrial_laser_scan_data
+
+https://www.researchgate.net/publication/270463038_Micro-crack_detection_of_multicrystalline_solar_cells_featuring_an_improved_anisotropic_diffusion_filter_and_image_segmentation_technique
+
+https://www.sciencedirect.com/science/article/pii/S1110016817300236#b0040
+
+Tools, resources used:
+infrared thermography, ultrasonic, radar, microwave and electroluminescence imagery and specific capture cameras
+
+Analysis:
+Objective based analysis: length, width, depth, position, surface and direction of propagation of the crack
+
+Dataset based analysis, accuracy level based analysis, error level based analysis (ex: deviation of the width of the crack not detected)
+
+
+- Toma-Florin Ungureanu
