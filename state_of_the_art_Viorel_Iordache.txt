@@ -1,0 +1,24 @@
+State of the art document for crack detection:
+
+Who:
+- Pang‐jo Chun   Department of Civil Engineering, Graduate School of Engineering, The University of Tokyo, Tokyo, Japan 
+- Shota Izumi    Department of Civil and Environmental Engineering, Ehime University, Matsuyama, Ehime, Japan 
+- Tatsuro Yamane Department of International Studies, Graduate School of Frontier Sciences, The University of Tokyo
+
+Title: 
+- Automatic detection method of cracks from concrete surface imagery using two‐step light gradient boosting machine
+
+What they did:
+- supervised machine learning: an automated crack detection method based on image processing using the light gradient boosting machine
+- reduced calculation converting to grayscale images (using the maximum value of the RGB components -> elements like graffiti are removed and cannot be mistaken for cracks)
+- correction using a median filter
+- they consider geometrical characteristics of the cracks to detect noise
+
+Tools:
+- LightGBM (open-source gradient boosting framework used for machine learning tasks)
+
+Links:
+- https://onlinelibrary.wiley.com/doi/abs/10.1111/mice.12564
+
+
+Iordache Viorel - 1MISS
