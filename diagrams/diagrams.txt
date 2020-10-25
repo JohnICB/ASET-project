@@ -1,0 +1,5 @@
+Diagrams:
+- Rares Vlaiduc: user location
+- Toma Florin Ungureanu: python algorithm, NN and prediction
+- Ionut Ciobanu: MVC 
+- Viorel Iordache: login and cracks history
