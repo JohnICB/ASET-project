@@ -1,4 +1,4 @@
-Diagrams:
+Diagrams repartisation:
 - Rares Vlaiduc: user location
 - Toma Florin Ungureanu: python algorithm, NN and prediction
 - Ionut Ciobanu: MVC 

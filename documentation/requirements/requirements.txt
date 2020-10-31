@@ -1,9 +1,32 @@
+Mobile crack detection application:
+
+
+-----------------
+
+
 User experience:
 
-1. login
+1. login / register
 1. the posibility to take or upload a photography in the application
 3. cracks history
 4. (stretch goal) parse video and detect cracks (take a screenshot X miliseconds and search for cracks)
 5. posibility to add the location (persmission required)
 6. ??? emergency warinings based on the severity of the crack
 7. the posibility to add extra details: the material of the construction, is it on a bridge, national monument etc? 
+
+
+---------
+
+1. Cross domain solution
+2. Mobile based
+3. Computation performed in cloud (google cloud, aws soutions?)
+
+
+---------
+Diagrams:
+- Rares Vlaiduc: user location
+- Toma Florin: python algorithm, NN and prediction
+- Ionut Ciobanu: MVC 
+- Viorel Iordache: login and cracks history
+
+
