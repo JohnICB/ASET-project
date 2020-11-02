@@ -1,9 +1,9 @@
+import express from 'express';
+import { ExpressManager } from './managers/expressManager';
 import * as functions from 'firebase-functions';
 
-// Start writing Firebase Functions
-// https://firebase.google.com/docs/functions/typescript
+const app: express.Express = express();
+new ExpressManager().ConfigureExpress(app);
 
-export const helloWorld = functions.https.onRequest((request, response) => {
-  functions.logger.info("Hello logs!", {structuredData: true});
-  response.send("Hello from Firebase!");
-});
+const deployRegion: string = 'europe-west6';
+export const api = functions.region(deployRegion).https.onRequest(app);
