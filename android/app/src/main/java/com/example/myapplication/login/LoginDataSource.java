@@ -1,22 +1,14 @@
-public class User
+public class LoginDataSource
 {
 
-    private String userId;
-    private String userName;
-
-    public LoggedInUser(String userId, String name)
+    public Result<LoggedInUser> login(String username, String password)
     {
-        this.userId = userId;
-        this.userName = name;
+
+        // TODO
     }
 
-    public String getUserId()
+    public void logout()
     {
-        return userId;
-    }
-
-    public String getUserName()
-    {
-        return userName;
+        // TODO: revoke authentication
     }
 }
