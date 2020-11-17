@@ -8,10 +8,10 @@ export class ExpressManager
 {
     public ConfigureExpress(app: express.Express): void
     {
+        app.disable('x-powered-by');
+
         app.use(express.json());
         app.use(express.urlencoded({ extended: false }));
-
-        app.disable('x-powered-by');
 
         app.use(cors.default());
 
