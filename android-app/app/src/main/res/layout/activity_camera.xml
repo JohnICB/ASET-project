@@ -8,10 +8,10 @@
              tools:context="info.uaic.ro.CameraActivity">
 
     <ImageView
-        android:id="@+id/overlay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/segmentation_result_overlay"
-        android:src="@android:color/transparent"
-        android:visibility="gone" />
+            android:id="@+id/overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/segmentation_result_overlay"
+            android:src="@android:color/transparent"
+            android:visibility="gone"/>
 </FrameLayout>
