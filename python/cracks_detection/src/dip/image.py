@@ -6,7 +6,6 @@ import setting.constant as const
 def overlay(image, layer):
     if len(layer.shape) == 2:
         layer = cv2.cvtColor(layer, cv2.COLOR_GRAY2BGR)
-        print(np.sum(layer))
 
     image = cv2.cvtColor(np.uint8(image), cv2.COLOR_BGR2BGRA)
     layer = cv2.cvtColor(layer, cv2.COLOR_BGR2BGRA)

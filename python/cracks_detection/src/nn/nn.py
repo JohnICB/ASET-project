@@ -7,6 +7,7 @@ from dip import dip
 from keras.callbacks import ModelCheckpoint, EarlyStopping
 from tensorflow import keras
 from util import path, data, misc, generator as gen
+import numpy as np
 
 
 class NeuralNetwork():
@@ -26,7 +27,8 @@ class NeuralNetwork():
         self.dn_test_out = path.dn_test(out_dir=True, mkdir=False)
 
         try:
-            self.model = self.arch.model(self.has_checkpoint())
+            # self.model = self.arch.model(self.has_checkpoint())
+            self.model = self.arch.build_model(self.has_checkpoint())
             if self.has_checkpoint():
                 print("Loaded: %s\n" % self.fn_checkpoint)
         except Exception as e:
@@ -45,11 +47,11 @@ class NeuralNetwork():
                 original_name = (const.fn_PREPROCESSING % number)
                 data.imwrite(path.join(path_save, original_name), image)
 
-                yield self.arch.prepare_input(image, 3)
+                yield self.arch.prepare_input(np.float32(image), 3)
         else:
             for (image, label) in zip(images, labels):
                 (image, label) = dip.preprocessor(image, label)
-                yield self.arch.prepare_input(image, 3), self.arch.prepare_input(label, 1)
+                yield self.arch.prepare_input(np.float32(image), 3), self.arch.prepare_input(label, 1)
 
     def save_predict(self, original, image):
         path_save = path.join(self.dn_test_out, mkdir=True)
@@ -59,7 +61,7 @@ class NeuralNetwork():
                 number = ("%0.3d" % (i + 1))
                 image_name = (const.fn_PREDICT % number)
 
-                image = dip.posprocessor(original[i], self.arch.prepare_output(image))
+                image = dip.posprocessor(original[i], self.arch.prepare_output(np.float32(image)))
                 data.imwrite(path.join(path_save, image_name), image)
 
                 seg = (image == 255).sum()

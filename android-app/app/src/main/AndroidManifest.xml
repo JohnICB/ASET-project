@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools" package="info.uaic.ro.surface_crack_detection">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.front" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application android:allowBackup="true"
+                 android:debuggable="true"
+                 android:label="@string/app_name"
+                 android:icon="@drawable/ic_launcher"
+                 android:theme="@style/MaterialTheme" tools:ignore="HardcodedDebugMode"
+                 android:largeHeap="true">
+
+        <activity android:name="info.uaic.ro.SegmentorActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/activity_name_segmentation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

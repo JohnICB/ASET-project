@@ -25,10 +25,10 @@ def shuffle(arr1, arr2):
 
 
 def epochs_and_steps(len_data, len_validation=None):
-    # if len_validation == 0:
-    g_divisor = int(len_data * 0.03)
-    # else:
-    #     g_divisor = middle_cdr(len_data, len_validation)
+    if len_validation == 0:
+        g_divisor = int(len_data * 0.1)
+    else:
+        g_divisor = middle_cdr(len_data, len_validation)
 
     epochs = len_data // g_divisor
     steps_per_epoch = len_data // epochs

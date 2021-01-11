@@ -2,11 +2,13 @@ import numpy as np
 import tensorflow as tf
 
 
-def convert_model(model_path):
+def convert_model(model_path, output_path):
     model = tf.keras.models.load_model(model_path)
     converter = tf.lite.TFLiteConverter.from_keras_model(model)
+    converter.optimizations = [tf.lite.Optimize.DEFAULT]
+    converter.target_spec.supported_types = [tf.float16]
     model1 = converter.convert()
-    file = open(r'D:\FAC\surface-crack-detection\model.tflite', 'wb')
+    file = open(output_path, 'wb')
     file.write(model1)
 
 
@@ -36,6 +38,5 @@ def load_model(model_path, dtype):
 
 
 if __name__ == '__main__':
-    convert_model(r"D:\FAC\surface-crack-detection\src\model\unet_crackconcrete_checkpoint.hdf5")
-    # load_model(r"D:\FAC\surface-crack-detection\model.tflite", np.float32)
-    load_model(r"D:\FAC\surface-crack-detection\mobilenet_v2_deeplab_v3_256_myquant.tflite", np.uint8)
+    convert_model(r"python/cracks_detection/src/model/unet_crackconcrete_checkpoint.hdf5",
+                  r'python/cracks_detection/model.tflite')
