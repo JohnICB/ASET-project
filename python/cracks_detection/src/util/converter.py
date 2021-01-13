@@ -8,7 +8,7 @@ def convert_model(model_path, output_path):
     converter.experimental_new_converter = True
     converter._experimental_new_quantizer = True
     converter.optimizations = [tf.lite.Optimize.DEFAULT]
-    converter.target_spec.supported_types = [tf.bfloat16]
+    converter.target_spec.supported_types = [tf.float16]
     model1 = converter.convert()
     file = open(output_path, 'wb')
     file.write(model1)
@@ -40,5 +40,5 @@ def load_model(model_path, dtype):
 
 
 if __name__ == '__main__':
-    convert_model(r"../model/unet_crackconcrete_checkpoint1.hdf5",
-                  r'../model/model_bfloat16.tflite')
+    convert_model(r"../model/unet_crackconcrete_checkpoint.hdf5",
+                  r'../model/model_float16.tflite')
