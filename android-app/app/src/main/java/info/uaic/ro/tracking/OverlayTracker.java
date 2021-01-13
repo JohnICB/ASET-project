@@ -26,9 +26,9 @@ public class OverlayTracker
         this.previewSize = previewSize;
 
         int[] colors = new int[2];
-        int alpha = 100;
-        colors[0] = Color.argb(alpha, 0, 0, 0);
-        colors[1] = Color.argb(alpha, 128, 0, 0);
+        int alpha = 50;
+        colors[0] = Color.argb(0, 0, 0, 0);
+        colors[1] = Color.argb(alpha, 255, 0, 0);
         this.colors = colors;
         this.labels = labels;
         this.lastLabels = new Vector<>();

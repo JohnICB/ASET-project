@@ -17,7 +17,6 @@ import org.tensorflow.lite.Interpreter;
 
 import java.io.*;
 import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.nio.channels.FileChannel;
 import java.util.Vector;
@@ -76,9 +75,10 @@ public class TFLiteObjectSegmentationAPIModel implements Segmentor
 
         try
         {
-            d.tfLite = new Interpreter(loadModelFile(assetManager, modelFilename));
-            Interpreter.Options opt = new Interpreter.Options();
-            opt.setNumThreads(4);
+            Interpreter.Options options = new Interpreter.Options();
+            options.setUseXNNPACK(true);
+            options.setNumThreads(8);
+            d.tfLite = new Interpreter(loadModelFile(assetManager, modelFilename), options);
         }
         catch (Exception e)
         {
@@ -98,7 +98,6 @@ public class TFLiteObjectSegmentationAPIModel implements Segmentor
 
         // Pre-allocate buffers.
         d.imgData = FloatBuffer.allocate(d.inputWidth * d.inputHeight * 3);
-//        d.imgData.order(ByteOrder.nativeOrder());
         d.intValues = new int[d.inputWidth * d.inputHeight];
         d.pixelClasses = new float[1][d.inputHeight][d.inputWidth][1];
         return d;
@@ -149,7 +148,7 @@ public class TFLiteObjectSegmentationAPIModel implements Segmentor
     private float[][][][] prepareInput(FloatBuffer bytes)
     {
         bytes.rewind();
-        bytes.put( new ClipByValue(new NDArray(bytes.array(), new int[]{1, bytes.capacity()}, 'c'),
+        bytes.put(new ClipByValue(new NDArray(bytes.array(), new int[]{1, bytes.capacity()}, 'c'),
                 0.0f, 255.0f).getInputArgument(0).div(255.0f).toFloatVector());
 
         bytes.rewind();
@@ -160,7 +159,7 @@ public class TFLiteObjectSegmentationAPIModel implements Segmentor
             {
                 for (int k = 0; k < 3; k++)
                 {
-                    int index = i * 256 * 3 + j * 3 + k;
+                    int index = i * this.inputWidth * 3 + j * 3 + k;
                     prepared[0][i][j][k] = (bytes.get(index));
                 }
             }

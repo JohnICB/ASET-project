@@ -31,6 +31,16 @@ import java.util.Vector;
 public class SegmentorActivity extends CameraActivity implements OnImageAvailableListener
 {
     private static final Logger LOGGER = new Logger();
+    // Configuration values for the prepackaged DeepLab model.
+    private static final int TF_OD_API_INPUT_WIDTH = 256;
+    private static final int TF_OD_API_INPUT_HEIGHT = 256;
+    private static final int TF_OD_API_NUM_CLASS = 2;
+    private static final String TF_OD_API_MODEL_FILE = "model_bfloat16.tflite";
+    private static final String TF_OD_API_LABELS_FILE = "file:///android_asset/labels.txt";
+    private static final boolean MAINTAIN_ASPECT = false;
+    private static final Size DESIRED_PREVIEW_SIZE = new Size(640, 480);
+    private static final boolean SAVE_PREVIEW_BITMAP = false;
+    private static final float TEXT_SIZE_DIP = 10;
 
     static
     {
@@ -39,18 +49,6 @@ public class SegmentorActivity extends CameraActivity implements OnImageAvailabl
         System.setProperty("org.bytedeco.javacpp.maxbytes", "0");
     }
 
-    // Configuration values for the prepackaged DeepLab model.
-    private static final int TF_OD_API_INPUT_WIDTH = 256;
-    private static final int TF_OD_API_INPUT_HEIGHT = 256;
-    private static final int TF_OD_API_NUM_CLASS = 2;
-    private static final int TF_OD_API_NUM_OUTPUT = 1;
-    private static final String TF_OD_API_MODEL_FILE = "model.tflite";
-    private static final String TF_OD_API_LABELS_FILE = "file:///android_asset/labels.txt";
-    private static final segmentorMode MODE = segmentorMode.TF_OD_API;
-    private static final boolean MAINTAIN_ASPECT = false;
-    private static final Size DESIRED_PREVIEW_SIZE = new Size(640, 480);
-    private static final boolean SAVE_PREVIEW_BITMAP = false;
-    private static final float TEXT_SIZE_DIP = 10;
     OverlayView segmentOverlay;
 
     private Segmentor segmentor;
@@ -204,10 +202,5 @@ public class SegmentorActivity extends CameraActivity implements OnImageAvailabl
     protected Size getDesiredPreviewFrameSize()
     {
         return DESIRED_PREVIEW_SIZE;
-    }
-
-    private enum segmentorMode
-    {
-        TF_OD_API
     }
 }

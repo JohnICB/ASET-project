@@ -73,11 +73,10 @@ dependencies {
     implementation  group: 'org.bytedeco', name: 'leptonica', version: leptonicaVersion, classifier: "android-arm64"
     implementation  group: 'org.bytedeco', name: 'leptonica', version: leptonicaVersion, classifier: "android-x86"
     implementation  group: 'org.bytedeco', name: 'leptonica', version: leptonicaVersion, classifier: "android-x86_64"
-
     annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.4'
-
     implementation 'org.tensorflow:tensorflow-lite:2.4.0'
     implementation 'org.tensorflow:tensorflow-lite-gpu:2.4.0'
+
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'

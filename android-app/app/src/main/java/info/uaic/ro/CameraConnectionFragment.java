@@ -232,8 +232,8 @@ public class CameraConnectionFragment extends Fragment
 
         // Collect the supported resolutions that are at least as big as the preview Surface
         boolean exactSizeFound = false;
-        final List<Size> bigEnough = new ArrayList<Size>();
-        final List<Size> tooSmall = new ArrayList<Size>();
+        final List<Size> bigEnough = new ArrayList<>();
+        final List<Size> tooSmall = new ArrayList<>();
         for (final Size option : choices)
         {
             if (option.equals(desiredSize))
@@ -393,10 +393,6 @@ public class CameraConnectionFragment extends Fragment
         }
         catch (final NullPointerException e)
         {
-            // Currently an NPE is thrown when the Camera2API is used but not supported on the
-            // device this code runs.
-            // TODO(andrewharp): abstract ErrorDialog/RuntimeException handling out into new method and
-            // reuse throughout app.
             ErrorDialog.newInstance(getString(R.string.camera_error))
                     .show(getChildFragmentManager(), FRAGMENT_DIALOG);
             throw new RuntimeException(getString(R.string.camera_error));

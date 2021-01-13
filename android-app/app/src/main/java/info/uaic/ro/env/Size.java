@@ -1,6 +1,5 @@
 package info.uaic.ro.env;
 
-import android.graphics.Bitmap;
 import android.text.TextUtils;
 
 import java.io.Serializable;
@@ -23,73 +22,6 @@ public class Size implements Comparable<Size>, Serializable
     {
         this.width = width;
         this.height = height;
-    }
-
-    public Size(final Bitmap bmp)
-    {
-        this.width = bmp.getWidth();
-        this.height = bmp.getHeight();
-    }
-
-    /**
-     * Rotate a size by the given number of degrees.
-     *
-     * @param size     Size to rotate.
-     * @param rotation Degrees {0, 90, 180, 270} to rotate the size.
-     * @return Rotated size.
-     */
-    public static Size getRotatedSize(final Size size, final int rotation)
-    {
-        if (rotation % 180 != 0)
-        {
-            // The phone is portrait, therefore the camera is sideways and frame should be rotated.
-            return new Size(size.width, size.height);
-        }
-        return size;
-    }
-
-    public static Size parseFromString(String sizeString)
-    {
-        if (TextUtils.isEmpty(sizeString))
-        {
-            return null;
-        }
-
-        sizeString = sizeString.trim();
-
-        // The expected format is "<width>x<height>".
-        final String[] components = sizeString.split("x");
-        if (components.length == 2)
-        {
-            try
-            {
-                final int width = Integer.parseInt(components[0]);
-                final int height = Integer.parseInt(components[1]);
-                return new Size(width, height);
-            }
-            catch (final NumberFormatException e)
-            {
-                return null;
-            }
-        }
-        else
-        {
-            return null;
-        }
-    }
-
-    public static String sizeListToString(final List<Size> sizes)
-    {
-        StringBuilder sizesString = new StringBuilder();
-        if (sizes != null && sizes.size() > 0)
-        {
-            sizesString = new StringBuilder(sizes.get(0).toString());
-            for (int i = 1; i < sizes.size(); i++)
-            {
-                sizesString.append(",").append(sizes.get(i).toString());
-            }
-        }
-        return sizesString.toString();
     }
 
     public static String dimensionsAsString(final int width, final int height)

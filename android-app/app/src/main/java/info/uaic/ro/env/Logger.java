@@ -30,26 +30,6 @@ public final class Logger
     private int minLogLevel = DEFAULT_MIN_LOG_LEVEL;
 
     /**
-     * Creates a Logger using the class name as the message prefix.
-     *
-     * @param clazz the simple name of this class is used as the message prefix.
-     */
-    public Logger(final Class<?> clazz)
-    {
-        this(clazz.getSimpleName());
-    }
-
-    /**
-     * Creates a Logger using the specified message prefix.
-     *
-     * @param messagePrefix is prepended to the text of every message.
-     */
-    public Logger(final String messagePrefix)
-    {
-        this(DEFAULT_TAG, messagePrefix);
-    }
-
-    /**
      * Creates a Logger with a custom tag and a custom message prefix. If the message prefix
      * is set to <pre>null</pre>, the caller's class name is used as the prefix.
      *
