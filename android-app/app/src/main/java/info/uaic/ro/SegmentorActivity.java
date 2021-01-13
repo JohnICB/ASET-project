@@ -35,7 +35,7 @@ public class SegmentorActivity extends CameraActivity implements OnImageAvailabl
     private static final int TF_OD_API_INPUT_WIDTH = 256;
     private static final int TF_OD_API_INPUT_HEIGHT = 256;
     private static final int TF_OD_API_NUM_CLASS = 2;
-    private static final String TF_OD_API_MODEL_FILE = "model_bfloat16.tflite";
+    private static final String TF_OD_API_MODEL_FILE = "model_float16.tflite";
     private static final String TF_OD_API_LABELS_FILE = "file:///android_asset/labels.txt";
     private static final boolean MAINTAIN_ASPECT = false;
     private static final Size DESIRED_PREVIEW_SIZE = new Size(640, 480);
